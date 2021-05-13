@@ -1,7 +1,9 @@
 package sda_java_zaaw;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class addToArrayAndSort {
     public static void main(String[] args) {
@@ -22,6 +24,7 @@ public class addToArrayAndSort {
         }
 
         System.out.println("tablica posortowana");
+
 
         Arrays.sort(tab);
         System.out.println(Arrays.toString(tab));
