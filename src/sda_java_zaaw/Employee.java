@@ -1,9 +1,6 @@
 package sda_java_zaaw;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Employee {
@@ -79,7 +76,19 @@ public class Employee {
                 .sorted(Comparator.comparing(Employee::getName))
                 .collect(Collectors.toList());
 
-       employeeSort.forEach(System.out::println);
-    }
+        employeeSort.forEach(System.out::println);
 
+        System.out.println("============");
+        System.out.println("============");
+        System.out.println("============");
+
+        Long employeeMaxSalary = employees.stream()
+                .map(Employee::getSalary)
+                .max(Comparator.naturalOrder())
+                .orElseThrow(NoSuchElementException::new);
+
+        System.out.println(employeeMaxSalary);
+    }
 }
+
+
