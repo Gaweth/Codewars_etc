@@ -6,13 +6,14 @@ import java.util.function.Supplier;
 
 public class GenericProduct implements Product{
 
-    private Supplier<Double> priceSupplier;
-    private Function<LocalDate, Boolean> availabilityFunction;
+    private final Supplier<Double> priceSupplier;
+    private final Function<LocalDate, Boolean> availabilityFunction;
 
-    public GenericProduct(Supplier<Double> priceSupplier, Function<LocalDate, Boolean> availabilityFunction) {
+    public GenericProduct(final Supplier<Double> priceSupplier, final Function<LocalDate, Boolean> availabilityFunction) {
         this.priceSupplier = priceSupplier;
         this.availabilityFunction = availabilityFunction;
     }
+
 
 
 
@@ -28,3 +29,4 @@ public class GenericProduct implements Product{
 
 
 }
+

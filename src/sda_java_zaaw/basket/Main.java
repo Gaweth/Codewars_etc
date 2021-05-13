@@ -16,7 +16,7 @@ public class Main {
         List<Product> products = basket.getProcuctList();
         System.out.println(products);
 
-        products.remove(meat);
+        System.out.println(products.remove(meat));
         System.out.println(products);
         System.out.println(basket.getProcuctList());
 
