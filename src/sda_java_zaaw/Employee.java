@@ -1,8 +1,10 @@
 package sda_java_zaaw;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Employee {
     private int id;
@@ -45,18 +47,39 @@ public class Employee {
         this.salary = salary;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee(1, "Jan nowak", 35000));
-        employees.add(new Employee(2, "Ewa Kowal", 30000));
-        employees.add(new Employee(3, "MArcin man", 1000));
+        employees.add(new Employee(1, "Nowak", 35000));
+        employees.add(new Employee(2, "Kowal", 30000));
+        employees.add(new Employee(3, "Man", 1000));
 
         Employee employee = employees.stream()
                 .findFirst()
-                .filter(Objects::isNull)
-                .filter(e->e.getSalary() > 30000 )
+                .filter(Objects::nonNull)
+                .filter(e -> e.getSalary() > 30000)
                 .orElseThrow(() -> new RuntimeException("not found"));
 
-        System.out.println(employee);
+        System.out.println(employee.getName());
+
+
+        /**
+         * sortowanie po na name
+         */
+
+        List<Employee> employeeSort = employees.stream()
+                .sorted(Comparator.comparing(Employee::getName))
+                .collect(Collectors.toList());
+
+       employeeSort.forEach(System.out::println);
     }
+
 }
