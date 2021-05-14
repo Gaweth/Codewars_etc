@@ -1,5 +1,7 @@
 package Main;
 
+import java.util.Locale;
+
 public class ReverseInt {
     public static void main(String[] args) {
         int number = 1235;
@@ -19,10 +21,20 @@ public class ReverseInt {
         System.out.println(reverse);
 
         System.out.println(reverseInt(1325));
+
+        System.out.println(stringBuilder("Michał"));
     }
 
-    public static String reverseInt(int n){
+    public static int reverseInt(int n){
 
-        return new StringBuilder().append(n).reverse().toString();
+        return Integer.parseInt(new StringBuilder().append(n).reverse().toString());
+    }
+
+    public static String stringBuilder(String word){
+        StringBuilder stringBuilder = new StringBuilder(word.toLowerCase());
+        stringBuilder.reverse();
+
+        System.out.println(stringBuilder);
+        return "";
     }
 }
