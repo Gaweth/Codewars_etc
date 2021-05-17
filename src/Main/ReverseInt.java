@@ -33,6 +33,7 @@ public class ReverseInt {
     public static String stringBuilder(String word){
         StringBuilder stringBuilder = new StringBuilder(word.toLowerCase());
         stringBuilder.reverse();
+        stringBuilder.deleteCharAt(0);
 
         System.out.println(stringBuilder);
         return "";
