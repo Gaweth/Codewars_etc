@@ -13,6 +13,19 @@ public class palindrom {
 //        System.out.println(palindrom("kajak") + " \n" + palindrom("ddgf") + " \n" + palindrom("oko w oko"));
 //        System.out.println(palindrom("afsdf"));
 //        System.out.println(palindrom("fafsdf"));
+        
+        
+  String s1= "kajak";
+    StringBuilder sb = new StringBuilder(s1);
+    if (s1.equals(sb.reverse().toString())){
+        //System.out.println("tak");
+    }
+
+    String s2 = "kajagk";
+    if (s2.equals(new StringBuilder(s2).reverse().toString())){
+        System.out.println("tak");
+    }
+        System.out.println("nie");
 
     }
 
