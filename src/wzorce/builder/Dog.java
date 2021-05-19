@@ -9,11 +9,11 @@ public class Dog {
     private Integer age;
     private List<String> toys;
 
-    public Dog(String name, String type, Integer age, List<String> toys) {
-        this.name = name;
-        this.type = type;
-        this.age = age;
-        this.toys = toys;
+    public Dog(DogBuilder builder) {
+        this.name = builder.name;
+        this.type = builder.type;
+        this.age = builder.age;
+        this.toys = builder.toys;
     }
 
     public String getName() {
@@ -69,13 +69,10 @@ public class Dog {
             return this;
 
         }
-        public DogBuilder withToys(final List<String> toys){
+        public DogBuilder withToys(final List<String> toys) {
             this.toys = toys;
             return this;
 
-        }
-        public Dog dogBuild(){
-            return new Dog(name,type,age,toys);
         }
 
         @Override
